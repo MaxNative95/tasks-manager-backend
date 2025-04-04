@@ -1,6 +1,7 @@
 # Task Manager - Backend
 
 Task Manager API is a secure backend built with FastAPI and MongoDB. It provides JWT-authenticated endpoints to manage personal tasks per user.
+Go here to test the api in local env ----> http://127.0.0.1:8000/docs#/
 
 ## Technologies
 - FastAPI
