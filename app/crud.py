@@ -29,7 +29,7 @@ async def update_task(task_id: str, update_data: TaskUpdate, user_id: str):
         return None
 
     result = await db.tasks.update_one(
-        {"_id": ObjectId(task_id), "user_id": user_id},  # valida que le pertenezca al usuario
+        {"_id": ObjectId(task_id), "user_id": user_id}, 
         {"$set": update_fields}
     )
 

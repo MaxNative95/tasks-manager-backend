@@ -29,7 +29,7 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
-# Registro
+# Register
 @auth_router.post("/register", status_code=201)
 async def register(user: UserIn):
     existing = await users_collection.find_one({"email": user.email})

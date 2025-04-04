@@ -8,12 +8,12 @@ from mangum import Mangum
 app = FastAPI(title="Task Manager API")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # En producción, usa ["http://localhost:3000"]
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# Incluir las rutas definidas en routes.py
+
 app.include_router(auth_router)
 app.include_router(router)
 

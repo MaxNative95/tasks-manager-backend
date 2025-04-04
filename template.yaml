@@ -6,7 +6,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: TaskManagerApi
-      Handler: app.main.handler  # Cambia a app.main.handler si tu main.py está dentro de app/
+      Handler: app.main.handler  
       Runtime: python3.11
       CodeUri: .
       MemorySize: 512
@@ -19,7 +19,7 @@ Resources:
         - AWSLambdaBasicExecutionRole
       Events:
         Api:
-          Type: Api  # Usa HttpApi en lugar de Api para API Gateway más moderno
+          Type: Api  
           Properties:
             RestApiId: !Ref TaskManagerApiGateway
             Path: /{proxy+}
@@ -34,12 +34,12 @@ Parameters:
   MongoUri:
     Type: String
     Default: "mongodb+srv://usuario:password@cluster.mongodb.net/?retryWrites=true&w=majority"
-    Description: "URL de conexión a MongoDB Atlas"
+    Description: "MongoDB Atlas url connection"
 
   SecretKey:
     Type: String
     Default: "mysecret"
-    Description: "Clave secreta para autenticacion"
+    Description: "Auth secret key"
 
 Outputs:
   TaskManagerApi:
