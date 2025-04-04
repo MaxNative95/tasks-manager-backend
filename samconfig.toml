@@ -1,0 +1,10 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "TaskManagerAPI"
+resolve_s3 = true
+s3_prefix = "TaskManagerAPI"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "MongoUri=\"mongodb+srv://usuario:password@cluster.mongodb.net/?retryWrites=true&w=majority\" SecretKey=\"mysecret\""
+image_repositories = []
